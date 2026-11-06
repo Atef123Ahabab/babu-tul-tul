@@ -7,10 +7,10 @@
     <style>
         body {
             background-color: #ffe6e6;
-            font-family: 'Georgia', serif; /* A more romantic font */
+            font-family: 'Georgia', serif;
             text-align: center;
             margin: 0;
-            padding: 50px 0;
+            padding: 40px 0;
             overflow: hidden;
             color: #4a4a4a;
         }
@@ -66,9 +66,8 @@
             100% { box-shadow: 0 0 40px rgba(255, 51, 102, 0.9); }
         }
         
-        /* The beautiful fading text effect */
         .message-container {
-            margin-top: 50px;
+            margin-top: 40px;
             padding: 0 20px;
         }
         .message {
@@ -78,8 +77,9 @@
             animation: fadeInText 2s forwards;
         }
         .m1 { animation-delay: 1s; }
-        .m2 { animation-delay: 5s; font-weight: bold; color: #ff3366;}
-        .m3 { animation-delay: 9s; }
+        .m2 { animation-delay: 5s; font-weight: bold; color: #ff3366; font-size: 1.4rem;}
+        .m3 { animation-delay: 9s; font-style: italic; }
+        .m4 { animation-delay: 13s; }
 
         @keyframes fadeInText {
             from { opacity: 0; transform: translateY(10px); }
@@ -92,12 +92,9 @@
     <h1>To My Tul Tul Shona Baby,</h1>
 
     <div class="container" id="kissContainer">
-        <!-- Your Photo -->
         <div class="photo-frame">
             <img src="boy.jpg" alt="Me">
         </div>
-
-        <!-- Her Photo -->
         <div class="photo-frame">
             <img src="girl.jpg" alt="Tul Tul Shona Baby">
         </div>
@@ -105,8 +102,12 @@
 
     <div class="message-container">
         <p class="message m1">I built this little corner of the internet just for you, because my love for you is endless. No matter the distance, my heart is always reaching out to yours.</p>
-        <p class="message m2">These kisses will never stop flying towards you, just like my love never will.</p>
-        <p class="message m3">You are my everything. Forever and always yours. ❤️</p>
+        
+        <!-- Your new sentence is here! -->
+        <p class="message m2">"I know babu you are obsessed about me but my obsession towards you is in a different level my januuuuu."</p>
+        
+        <p class="message m3">These kisses will never stop flying towards you, just like my love never will.</p>
+        <p class="message m4">You are my everything. Forever and always yours. ❤️</p>
     </div>
 
     <script>
