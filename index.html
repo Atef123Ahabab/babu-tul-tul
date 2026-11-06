@@ -7,37 +7,39 @@
     <style>
         body {
             background-color: #ffe6e6;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Georgia', serif; /* A more romantic font */
             text-align: center;
             margin: 0;
             padding: 50px 0;
             overflow: hidden;
+            color: #4a4a4a;
         }
         h1 {
             color: #ff3366;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            animation: pulse 2s infinite;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-style: italic;
         }
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 100px;
+            gap: 80px;
             position: relative;
             max-width: 900px;
             margin: 0 auto;
         }
         .photo-frame {
-            width: 250px;
-            height: 250px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
-            border: 8px solid #ff3366;
-            box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+            border: 6px solid #ff3366;
+            box-shadow: 0 0 30px rgba(255, 51, 102, 0.6);
             overflow: hidden;
             position: relative;
             z-index: 2;
             background-color: #fff;
+            animation: glow 3s infinite alternate;
         }
         .photo-frame img {
             width: 100%;
@@ -47,10 +49,11 @@
         .kiss {
             position: absolute;
             color: #ff3366;
-            font-size: 24px;
+            font-size: 20px;
             z-index: 1;
-            animation: flyKiss 2s linear infinite;
+            animation: flyKiss 2.5s linear infinite;
             opacity: 0;
+            text-shadow: 0 0 5px rgba(255,51,102,0.5);
         }
         @keyframes flyKiss {
             0% { transform: translate(0, 0) scale(0.5); opacity: 0; }
@@ -58,22 +61,35 @@
             80% { opacity: 1; }
             100% { transform: translate(220px, 0) scale(1.5); opacity: 0; }
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes glow {
+            0% { box-shadow: 0 0 20px rgba(255, 51, 102, 0.4); }
+            100% { box-shadow: 0 0 40px rgba(255, 51, 102, 0.9); }
         }
-        p {
-            color: #333;
-            font-size: 1.2rem;
-            margin-top: 40px;
+        
+        /* The beautiful fading text effect */
+        .message-container {
+            margin-top: 50px;
             padding: 0 20px;
+        }
+        .message {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInText 2s forwards;
+        }
+        .m1 { animation-delay: 1s; }
+        .m2 { animation-delay: 5s; font-weight: bold; color: #ff3366;}
+        .m3 { animation-delay: 9s; }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <h1>I Love You, Tul Tul Shona Baby!</h1>
+    <h1>To My Tul Tul Shona Baby,</h1>
 
     <div class="container" id="kissContainer">
         <!-- Your Photo -->
@@ -87,11 +103,15 @@
         </div>
     </div>
 
-    <p>You are my everything. Here are a million kisses flying your way. Forever yours. ❤️</p>
+    <div class="message-container">
+        <p class="message m1">I built this little corner of the internet just for you, because my love for you is endless. No matter the distance, my heart is always reaching out to yours.</p>
+        <p class="message m2">These kisses will never stop flying towards you, just like my love never will.</p>
+        <p class="message m3">You are my everything. Forever and always yours. ❤️</p>
+    </div>
 
     <script>
         const container = document.getElementById('kissContainer');
-        const kissSymbols = ['❤️', '💋', '💖', '😘'];
+        const kissSymbols = ['❤️', '💋', '💖', '😘', '💕'];
 
         function createKiss() {
             const kiss = document.createElement('div');
@@ -100,10 +120,10 @@
             
             const randomY = Math.random() * 200 - 100; 
             const randomDelay = Math.random() * 2;
-            const randomDuration = 1.5 + Math.random() * 1.5;
+            const randomDuration = 2 + Math.random() * 1.5;
 
             kiss.style.top = `calc(50% + ${randomY}px)`;
-            kiss.style.left = `250px`; 
+            kiss.style.left = `260px`; 
             kiss.style.animationDuration = `${randomDuration}s`;
             kiss.style.animationDelay = `${randomDelay}s`;
 
